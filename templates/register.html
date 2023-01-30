@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    </head>
+    <body>
+      <section class="vh-100" style="background-image: url('https://images.wallpaperscraft.com/image/single/motorcycle_steering_wheel_wheels_166852_1366x768.jpg'); ">
+        <h1 class="text-center text-dark">Welcome to our World</h1>
+<div class="container-fluid">
+    <form action="{% url 'register' %}" method="POST" class="row g-3 fw-bold">
+        {% csrf_token %}
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label ">First Name</label>
+          <input name="first_name" type="text" class="form-control bg-secondary" id="" required>
+        </div>
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Last Name</label>
+            <input name="last_name" type="text" class="form-control bg-secondary" id="" required>
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input name="email" type="email" class="form-control bg-secondary" id="inputEmail4" required>
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">User Name</label>
+            <input name="username" type="text" class="form-control bg-secondary" id="inputEmail4" required>
+          </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input name="password" type="password" class="form-control bg-secondary" id="inputPassword4" required>
+        </div>
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Confirm Password</label>
+            <input name="confirm_password" type="password" class="form-control bg-secondary" id="inputPassword4" required>
+          </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-outline-light btn-large  ">Register</button>
+          <h6 class="my-3">Already have an account? <a href="{% url 'login' %}">cilck here</a></h3> 
+        </div>
+      </form>
+      <div class="form-group">
+        {% for message in messages %}
+        <div class="alert alert-danger" role="alert">
+        {{message}}
+        </div>
+        {% endfor %}
+      </div>
+</div>
+</section>
+</body>
+</html>

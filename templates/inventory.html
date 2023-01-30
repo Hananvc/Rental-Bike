@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Your Ride
+{%endblock%}
+
+{% block content %}
+<h1 class="text-center">Our Inventory</h1>
+
+<hr>
+
+
+
+<div class="container text-center bg-white">
+{% for d in inventory %}
+    <div class="card text-center mx-3 my-3" style="width: 18rem; display:inline-block">
+        <img class="card-img-top" src="{{d.bikes_image.url}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{d.bikes_name}}</h5>
+          <p class="card-text">{{d.bikes_spec}}</p>
+       
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+{%endblock%}
